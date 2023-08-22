@@ -80,6 +80,7 @@ namespace SumParameters
                 }
                 //Параметры типа
                 var elType = _doc.GetElement(el.GetTypeId());
+                if (elType == null) continue;
                 var pst = elType.GetOrderedParameters();
                 var pstIntDouble = pst.Where(x => x.StorageType == StorageType.Integer || x.StorageType == StorageType.Double);
                 foreach (var param in pstIntDouble)
