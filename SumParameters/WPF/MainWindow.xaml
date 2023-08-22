@@ -1,0 +1,33 @@
+﻿<Window x:Class="SumParameters.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SumParameters.WPF"
+        xmlns:vm="clr-namespace:SumParameters.WPF"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Сумма параметров" Height="600" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="45"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ComboBox SelectedIndex="{Binding IndexSelectionMethod}"  Grid.Row="1" Margin="15, 10, 15, 10">
+            <TextBlock>Поштучный выбор</TextBlock>
+            <TextBlock>Выбор на виде</TextBlock>
+            <TextBlock>Выбор во всей модели</TextBlock>
+        </ComboBox>
+        <DataGrid Grid.Row="2" Margin="15" ItemsSource="{Binding Items}"   AutoGenerateColumns = "False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Имя параметра" Width ="200" Binding = "{Binding Name}" ></DataGridTextColumn>
+                <DataGridTextColumn Header="Кол-во" Width ="100" Binding = "{Binding Value}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ед.измер." Width="45" Binding = "{Binding Unit}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Grid.Row="3" Margin="15, 0, 10, 15" Command="{Binding Select}" Content="Выбрать"/>
+    </Grid>
+</Window>

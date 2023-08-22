@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>SumParameters</Name>
+    <Assembly>C:\ProgramData\Autodesk\Revit\Addins\2022\SumParameters.dll</Assembly>
+    <AddInId>4f7afd84-d72a-4de1-a60f-89a34ab0f3a1</AddInId>
+    <FullClassName>SumParameters.App</FullClassName>
+    <VendorId>ADSK</VendorId>
+  </AddIn>
+</RevitAddIns>
