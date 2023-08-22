@@ -103,6 +103,7 @@ namespace SumParameters
             ObservableCollection<ParamItem> paramItemsColection = new ObservableCollection<ParamItem>();
             var set = paramItems.OrderBy(x => x.Name).ToList();
             string lastItemName = "";
+            int e = 0;
             for (int i = 0; i < set.Count; i++)
             {
                 var itemName = set[i].Name;
@@ -110,8 +111,13 @@ namespace SumParameters
                 {
                     paramItemsColection.Add(set[i]);
                     lastItemName = itemName;
+                    e = 0;
                 }
-                else set[i - 1].Value += set[i].Value;
+                else
+                {
+                    e += 1;
+                    set[i - e].Value += set[i].Value;
+                }
 
             }
             return paramItemsColection ;
